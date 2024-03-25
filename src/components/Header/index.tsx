@@ -4,11 +4,11 @@ import { Button } from '../Button';
 import { Logo } from '../Logo';
 
 export const Header = () => (
-    <HeaderContainer className='wrapper'>
+    <HeaderContainer className="wrapper">
         <Container>
             <Logo />
             <Nav />
         </Container>
-        <Button text='Купить' />
+        <Button text="Купить" />
     </HeaderContainer>
 );

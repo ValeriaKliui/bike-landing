@@ -2,15 +2,17 @@ import { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 export enum ThemeEnum {
-  light = 'light',
-  dark = 'dark',
+    light = 'light',
+    dark = 'dark',
 }
 export type BaseTheme = {
-  primary: string;
-  white: string;
-  background: string;
+    primary: string;
+    white: string;
+    background: string;
+    circlesBackground: string;
+    disabled: string;
 };
 
 export type ThemeProps = {
-  children: ReactNode;
+    children: ReactNode;
 };
