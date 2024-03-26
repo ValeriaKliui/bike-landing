@@ -13,6 +13,7 @@ export type BaseTheme = {
     dark: string;
     mainColor: string;
     subColor: string;
+    noiseSrc: string;
 };
 
 export type ThemeProps = {

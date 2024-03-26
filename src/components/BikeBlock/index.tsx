@@ -29,7 +29,7 @@ export const BikeBlock = () => (
                     <h4>Комплект поставки</h4>
                     <div>
                         {COMPLECT.map((item) => (
-                            <p>{item}</p>
+                            <p key={item}>{item}</p>
                         ))}
                     </div>
                 </Complect>

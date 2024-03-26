@@ -7,43 +7,27 @@ export const Reviews = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const sectionRef = useRef<HTMLDivElement>(null);
     const [left, setLeft] = useState(0);
-    const step = 3;
+    const slidersStep = 3;
+    const reviewGap = 42;
+    const [slidersMoved, setSlidersMoved] = useState(slidersStep)
 
     const moveSlider = () => {
-        const widthOfReview = reviewRef?.current?.getBoundingClientRect().width;
-        const widthOfShowingReviews = widthOfReview * step;
-        console.log(containerRef?.current?.getBoundingClientRect().right);
+        const widthOfOneReview = reviewRef?.current?.getBoundingClientRect().width || 0;
+        const widthOfSlidedReviews = (widthOfOneReview + reviewGap) * slidersStep;
+        const slidesLeft = REVIEWS.length - slidersMoved
 
-        if (containerRef?.current?.getBoundingClientRect().right >= 0) {
-            if (
-                containerRef?.current?.getBoundingClientRect().right >=
-                widthOfShowingReviews
-            )
-                setLeft((prev) => prev + widthOfShowingReviews);
-            else
-                setLeft(
-                    (prev) =>
-                        prev +
-                        containerRef?.current?.getBoundingClientRect().right +
-                        widthOfReview
-                );
+        if (slidesLeft > 0) {
+            if (slidesLeft > slidersStep) setLeft((prev) => prev + widthOfSlidedReviews);
+            else setLeft((prev) => prev + (slidesLeft) * widthOfOneReview);
         }
-
-        // if (
-        //     containerRef?.current?.getBoundingClientRect().right >=
-        //     (reviewRef?.current?.getBoundingClientRect().width) * 2
-        // )
-        //     setLeft(
-        //         (prev) =>
-        //             prev + reviewRef?.current?.getBoundingClientRect().width * 2
-        //     );
+        setSlidersMoved(prev => prev + slidersStep)
     };
 
     return (
         <SectionContainer ref={sectionRef}>
             <div className="wrapper">
                 <Title>Отзывы о Mi Scooter Pro 2</Title>
-                <Container $left={left} ref={containerRef}>
+                <Container ref={containerRef} $left={left} $gap={reviewGap}>
                     {REVIEWS.map(({ name, review }, index) => (
                         <Review key={index} ref={reviewRef}>
                             <Name>{name || 'Имя скрыто'}</Name>

@@ -53,16 +53,26 @@ export const GlobalStyles = styled.createGlobalStyle`
         flex-direction: column;
         min-height: 100vh;
         background: radial-gradient(
-                200px circle at 90% -10%,
+                200px circle at 85% 0%,
                 ${({ theme }) => theme.circlesBackground} 50%,
-                transparent 450%
+                transparent 420%
             ),
             radial-gradient(
-                150px circle at 25% 40%,
+                150px circle at 25% 16%,
                 ${({ theme }) => theme.circlesBackground} 50%,
-                transparent 450%
+                transparent 400%
             ),
-            url(https://grainy-gradients.vercel.app/noise.svg);
+            radial-gradient(
+                250px circle at 65% 36%,
+                ${({ theme }) => theme.circlesBackground} 50%,
+                transparent 400%
+            ),
+            radial-gradient(
+                100px circle at 25% 55%,
+                ${({ theme }) => theme.circlesBackground} 50%,
+                transparent 560%
+            ),
+            url(${({ theme }) => theme.noiseSrc});
         background-color: ${({ theme }) => theme.background};
     }
     .wrapper {
