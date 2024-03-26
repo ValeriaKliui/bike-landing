@@ -1,9 +1,9 @@
 import { Toggler } from '../Toggler';
-import { SectionContainer, Subtitle } from './styled';
+import { SectionContainer, Subtitle, Container } from './styled';
 
 export const Preview = () => (
     <SectionContainer>
-        <div className="wrapper">
+        <Container className="wrapper">
             <h1>Стильный электросамокат с мощным аккумулятором</h1>
             <Subtitle>
                 Улучшенная производительность для дальних путешествий. Работает
@@ -11,6 +11,6 @@ export const Preview = () => (
                 как и выглядит.
             </Subtitle>
             <Toggler />
-        </div>
+        </Container>
     </SectionContainer>
 );

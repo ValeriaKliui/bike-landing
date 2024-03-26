@@ -5,7 +5,6 @@ import GilroyTtf from '@assets/fonts/Gilroy-Regular.ttf';
 import GilroySemiboldWoff from '@assets/fonts/Gilroy-SemiBold.woff';
 import GilroySemiboldEot from '@assets/fonts/Gilroy-SemiBold.eot';
 import GilroySemiboldTtf from '@assets/fonts/Gilroy-SemiBold.ttf';
-import BikeImg from '@assets/images/bike.png';
 
 const styled = { createGlobalStyle };
 
@@ -29,7 +28,9 @@ export const GlobalStyles = styled.createGlobalStyle`
         color: inherit;
     }
     h1,
-    h2 {
+    h2,
+    h3,
+    h4 {
         margin: 0;
     }
     * {
@@ -42,6 +43,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     button {
         font-family: 'Gilroy';
         font-size: 14px;
+        color: ${({ theme }) => theme.mainColor};
     }
     p {
         line-height: 150%;
@@ -83,6 +85,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     h4 {
         font-family: 'Gilroy-Semibold';
         font-size: 1.4em;
+        margin-bottom: 1em;
     }
     img {
         max-width: 100%;

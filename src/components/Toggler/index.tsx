@@ -1,13 +1,22 @@
-import { useContext } from "react";
-import { ThemeContext } from "styled-components";
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+import { Container, Option } from './styled';
+import { ThemeType } from '../Theme/interface';
 
 export const Toggler = () => {
-    const { changeTheme } = useContext(ThemeContext);
+    const { changeTheme, theme } = useContext(ThemeContext);
 
     return (
-        <div>
-            <button onClick={changeTheme}>Белый</button>
-            <button>черный</button>
-        </div>
+        <Container>
+            <Option onClick={changeTheme} $isChoosen={theme === ThemeType.dark}>
+                Белый
+            </Option>
+            <Option
+                onClick={changeTheme}
+                $isChoosen={theme === ThemeType.light}
+            >
+                Черный
+            </Option>
+        </Container>
     );
-}
+};

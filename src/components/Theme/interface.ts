@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
-import { ThemeProvider } from 'styled-components';
 
-export enum ThemeEnum {
+export enum ThemeType {
     light = 'light',
     dark = 'dark',
 }
@@ -11,6 +10,9 @@ export type BaseTheme = {
     background: string;
     circlesBackground: string;
     disabled: string;
+    dark: string;
+    mainColor: string;
+    subColor: string;
 };
 
 export type ThemeProps = {

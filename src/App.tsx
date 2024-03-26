@@ -10,6 +10,7 @@ import { Design } from './components/Design';
 import { FAQ } from './components/FAQ';
 import { ColorType } from './components/ImageBlock/interfaces';
 import { Reviews } from './components/Reviews';
+import { BikeBlock } from './components/BikeBlock';
 
 const Main = styled.main`
     flex-grow: 1;
@@ -36,6 +37,7 @@ const App = () => (
             />
             <Reviews />
             <FAQ />
+            <BikeBlock />
         </Main>
         <Footer />
     </>

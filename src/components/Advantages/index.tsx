@@ -5,8 +5,6 @@ import {
     AdvantageTextContainer,
     AdvantageImage,
     Title,
-    AdvantageContainer,
-    Advantage,
 } from './styled';
 import { Fragment, useState } from 'react';
 
@@ -26,7 +24,6 @@ export const Advantages = () => {
                     {ADVANTAGES.map(
                         ({ advantage, description, imgSrc }, index) => {
                             const isChoosen = choosenIndex === index;
-                            const isFirst = index === 0;
                             const isLast = index === ADVANTAGES.length - 1;
                             const sum = index + choosenIndex;
                             const imgIndex =

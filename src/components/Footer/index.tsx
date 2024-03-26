@@ -1,7 +1,7 @@
 import { FooterContainer, WorkData } from './styled';
 
 export const Footer = () => (
-    <FooterContainer className='wrapper'>
+    <FooterContainer className="wrapper">
         <div>
             <p>© 2010 - 2021 Xiaomi.</p>
             <p> Все права защищены.</p>

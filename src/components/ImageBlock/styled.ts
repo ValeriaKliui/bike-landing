@@ -7,7 +7,7 @@ export const SectionWrapper = styled.section<{
 }>`
     background: no-repeat top/100% url(${({ $src }) => $src});
     background-size: cover;
-    box-shadow: ${({ $colorType, theme }) =>
+    box-shadow: ${({ $colorType }) =>
         $colorType === ColorType.primary &&
         'inset 0 0 0 100vmax rgba(232, 181, 119, 0.2)'};
     padding: 8.5em 0;
