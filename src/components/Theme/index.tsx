@@ -13,7 +13,7 @@ const themeLight: BaseTheme = {
     dark: '#151515',
     mainColor: '#151515',
     subColor: '#f1f1f1',
-    noiseSrc: LightNoiseSrc
+    noiseSrc: LightNoiseSrc,
 };
 
 const themeDark: BaseTheme = {
@@ -21,7 +21,7 @@ const themeDark: BaseTheme = {
     mainColor: '#f1f1f1',
     subColor: '#151515',
     background: '#222222',
-    noiseSrc: DarkNoiseSrc
+    noiseSrc: DarkNoiseSrc,
 };
 
 export const Theme = ({ children }: ThemeProps) => {

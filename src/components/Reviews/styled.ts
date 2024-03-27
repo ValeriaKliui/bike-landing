@@ -27,6 +27,3 @@ export const Name = styled.h4`
         background-color: ${({ theme }) => theme.dark};
     }
 `;
-export const Title = styled.h2`
-    color: ${({ theme }) => theme.primary};
-`;

@@ -3,6 +3,8 @@ import PanelSrc from '@assets/images/panel.png';
 import PeopleOnBikesSrc from '@assets/images/advantage_bike.png';
 import PeopleTalkingSrc from '@assets/images/people_talking.png';
 import CompanySrc from '@assets/images/company.png';
+import LightsSrc from '@assets/images/scooter_lights.png';
+import LightSrc from '@assets/images/scooter_light.png';
 
 export const DESIGN_CARDS_INFO = [
     {
@@ -36,7 +38,7 @@ export const FAQ_ITEMS = [
     },
 ];
 
-export const ADVANTAGES = [
+export const PARAMETERS = [
     {
         advantage: 'Три режима скорости',
         description:
@@ -54,6 +56,32 @@ export const ADVANTAGES = [
         description:
             'Самокат оснащен аккумулятором емкостью 12 800 мАч. Это позволяет преодолевать расстояния до 45 км без подзарядки.',
         imgSrc: CompanySrc,
+    },
+];
+export const PARAMETERS_EXTRA = [
+    {
+        advantage: 'Яркие ходовые огни',
+        description:
+            'Продуманный угол рассеивания света позволяет сохранять хорошую видимость, не ослепляя других участников движения.',
+        imgSrc: LightsSrc,
+    },
+    {
+        advantage: 'Двойная тормозная система',
+        description:
+            'При нажатии наручку тормоза системы переднего и заднего колеса активируются последовательно, сокращая тормозной путь и обеспечивая безопасную и плавную остановку.',
+        imgSrc: LightSrc,
+    },
+    {
+        advantage: 'Яркая задняя фара',
+        description:
+            'При включении ходовых огней задняя фара включается автоматически. При нажатии на ручку тормоза она начинает мигать, предупреждая других участников движения.',
+        imgSrc: PanelSrc,
+    },
+    {
+        advantage: 'Отражатели спереди, сбоку и сзади',
+        description:
+            'Улучшенные отражатели, размещенные с четырех сторон, делают вашу поездку в темное время суток безопаснее.',
+        imgSrc: ScooterSrc,
     },
 ];
 export const REVIEWS = [

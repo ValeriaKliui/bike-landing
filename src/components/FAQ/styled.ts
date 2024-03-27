@@ -11,9 +11,6 @@ export const SectionText = styled.div`
     align-items: flex-start;
     flex-basis: 55%;
 `;
-export const Title = styled.h2`
-    color: ${({ theme }) => theme.primary};
-`;
 export const TextContainer = styled.div`
     max-width: 80%;
 `;

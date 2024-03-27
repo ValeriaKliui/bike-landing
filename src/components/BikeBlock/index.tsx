@@ -9,16 +9,17 @@ import {
     Title,
     LeftContainer,
     Complect,
+    SectionContainer,
 } from './styled';
 import BikeImg from '@assets/images/bikeBig.png';
 
 export const BikeBlock = () => (
-    <section>
+    <SectionContainer>
         <Container className="wrapper">
             <LeftContainer>
                 <div>
                     <Title>Mi Electric Scooter Pro 2</Title>
-                    <Subtitle>2000 BYN</Subtitle>
+                    <Subtitle className="colored-title">2000 BYN</Subtitle>
                     <Toggler />
                 </div>
                 <Button text="Купить" primary />
@@ -35,5 +36,5 @@ export const BikeBlock = () => (
                 </Complect>
             </MediaContainer>
         </Container>
-    </section>
+    </SectionContainer>
 );

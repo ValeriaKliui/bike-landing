@@ -1,18 +1,12 @@
 import { FAQ_ITEMS } from '@/constants';
-import {
-    Container,
-    SectionText,
-    TextContainer,
-    Question,
-    Title,
-} from './styled';
+import { Container, SectionText, TextContainer, Question } from './styled';
 import { Fragment } from 'react/jsx-runtime';
 
 export const FAQ = () => (
     <section>
         <Container className="wrapper">
             <SectionText>
-                <Title>Часто задаваемые вопросы</Title>
+                <h2>Часто задаваемые вопросы</h2>
                 <TextContainer>
                     <p>
                         Все ваши часто задаваемые вопросы об электросамокате Mi

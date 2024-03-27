@@ -1,14 +1,20 @@
-import { ADVANTAGES } from '@/constants';
+import { ColorType } from '../ImageBlock/interfaces';
+import { AdvantageProps } from './interfaces';
 import {
     SectionWrapper,
     AdvantagesGrid,
     AdvantageTextContainer,
     AdvantageImage,
     Title,
+    SectionTitle,
 } from './styled';
-import { Fragment, useState } from 'react';
+import { FC, Fragment, useState } from 'react';
 
-export const Advantages = () => {
+export const Advantages: FC<AdvantageProps> = ({
+    title,
+    advantages = [],
+    colorType = ColorType.light,
+}) => {
     const [choosenIndex, setIsChoosenIndex] = useState(0);
 
     const chooseAdvantage = (index: number) => setIsChoosenIndex(index);
@@ -16,20 +22,19 @@ export const Advantages = () => {
     return (
         <SectionWrapper>
             <div className="wrapper">
-                <h2>
-                    Мощная батарея и экономичный расход заряда позволяют
-                    преодолевать расстояния до 45 км
-                </h2>
+                <SectionTitle $colorType={colorType}>{title}</SectionTitle>
                 <AdvantagesGrid>
-                    {ADVANTAGES.map(
+                    {advantages.map(
                         ({ advantage, description, imgSrc }, index) => {
                             const isChoosen = choosenIndex === index;
-                            const isLast = index === ADVANTAGES.length - 1;
+                            const isLast = index === advantages.length - 1;
                             const sum = index + choosenIndex;
                             const imgIndex =
-                                sum >= ADVANTAGES.length
-                                    ? sum - ADVANTAGES.length
+                                sum >= advantages.length
+                                    ? sum - advantages.length
                                     : sum;
+                            // const isShowed = choosenIndex + 1;
+                            console.log(choosenIndex + 1, imgIndex);
 
                             return (
                                 <Fragment key={advantage}>
@@ -48,7 +53,8 @@ export const Advantages = () => {
                                     </AdvantageTextContainer>
                                     <AdvantageImage
                                         src={imgSrc}
-                                        $index={imgIndex}
+                                        id={index}
+                                        $index={index}
                                     />
                                 </Fragment>
                             );

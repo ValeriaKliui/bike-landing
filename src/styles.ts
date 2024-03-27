@@ -104,4 +104,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     section {
         margin-bottom: 8.6em;
     }
+    .colored-title {
+        color: ${({ theme }) => theme.primary};
+    }
 `;
