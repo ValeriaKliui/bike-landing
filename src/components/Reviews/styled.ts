@@ -17,7 +17,7 @@ export const ReviewsContainer = styled.div<{ $left: number; $gap: number }>`
 `;
 export const Review = styled.div`
     padding: 3em;
-    background-color: ${({ theme }) => theme.subColor};
+    background-color: ${({ theme }) => theme.colors.subColor};
     flex-shrink: 0;
     flex-basis: 30%;
     border-radius: 15px;
@@ -29,7 +29,7 @@ export const Name = styled.h4`
         display: block;
         width: 100px;
         height: 3px;
-        background-color: ${({ theme }) => theme.primary};
+        background-color: ${({ theme }) => theme.colors.primary};
     }
 `;
 export const Buttons = styled.div`
@@ -40,7 +40,7 @@ export const Buttons = styled.div`
 export const LeftButton = styled.div`
     width: 54px;
     height: 54px;
-    background: ${({ theme }) => theme.white};
+    background: ${({ theme }) => theme.colors.white};
     border-radius: 100%;
     cursor: pointer;
     display: flex;
@@ -48,11 +48,11 @@ export const LeftButton = styled.div`
     justify-content: center;
 
     &:hover {
-        background-color: ${({ theme }) => theme.primary};
+        background-color: ${({ theme }) => theme.colors.primary};
         svg {
             path,
             rect {
-                fill: ${({ theme }) => theme.white};
+                fill: ${({ theme }) => theme.colors.white};
             }
         }
     }

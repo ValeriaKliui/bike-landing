@@ -5,6 +5,7 @@ import GilroyTtf from '@assets/fonts/Gilroy-Regular.ttf';
 import GilroySemiboldWoff from '@assets/fonts/Gilroy-SemiBold.woff';
 import GilroySemiboldEot from '@assets/fonts/Gilroy-SemiBold.eot';
 import GilroySemiboldTtf from '@assets/fonts/Gilroy-SemiBold.ttf';
+import { devices } from './components/Theme/constants';
 
 const styled = { createGlobalStyle };
 
@@ -43,7 +44,13 @@ export const GlobalStyles = styled.createGlobalStyle`
     button {
         font-family: 'Gilroy';
         font-size: 14px;
-        color: ${({ theme }) => theme.mainColor};
+        color: ${({ theme }) => theme.colors.mainColor};
+        ${devices.lg} {
+            font-size: 10px;
+        }
+        ${devices.md} {
+            font-size: 8px;
+        }
     }
     p {
         line-height: 150%;
@@ -52,35 +59,42 @@ export const GlobalStyles = styled.createGlobalStyle`
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        overflow: hidden;
         background: radial-gradient(
                 200px circle at 85% 0%,
-                ${({ theme }) => theme.circlesBackground} 50%,
+                ${({ theme }) => theme.colors.circlesBackground} 50%,
                 transparent 420%
             ),
             radial-gradient(
                 150px circle at 25% 16%,
-                ${({ theme }) => theme.circlesBackground} 50%,
+                ${({ theme }) => theme.colors.circlesBackground} 50%,
                 transparent 400%
             ),
             radial-gradient(
                 250px circle at 65% 36%,
-                ${({ theme }) => theme.circlesBackground} 50%,
+                ${({ theme }) => theme.colors.circlesBackground} 50%,
                 transparent 400%
             ),
             radial-gradient(
                 100px circle at 25% 55%,
-                ${({ theme }) => theme.circlesBackground} 50%,
+                ${({ theme }) => theme.colors.circlesBackground} 50%,
                 transparent 560%
             ),
             url(${({ theme }) => theme.noiseSrc});
-        background-color: ${({ theme }) => theme.background};
+        background-color: ${({ theme }) => theme.colors.background};
     }
     .wrapper {
         margin: 0 auto;
         max-width: 1160px;
+        ${devices.lg} {
+            max-width: 840px;
+        }
+        ${devices.md} {
+            max-width: 540px;
+        }
     }
     h1 {
-        color: ${({ theme }) => theme.primary};
+        color: ${({ theme }) => theme.colors.primary};
         font-size: 5.7em;
     }
     h2 {
@@ -105,7 +119,7 @@ export const GlobalStyles = styled.createGlobalStyle`
         margin-bottom: 8.6em;
     }
     .colored-title {
-        color: ${({ theme }) => theme.primary};
+        color: ${({ theme }) => theme.colors.primary};
     }
 
     .my-node-enter {

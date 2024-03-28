@@ -1,9 +1,10 @@
 import { styled } from 'styled-components';
 import BikeImg from '@assets/images/bike.png';
+import { media } from '../Theme/constants';
 
 export const HeaderContainer = styled.header`
     background: url(${BikeImg}) no-repeat fixed;
-    background-position: -60% top;
+    background-position: right top;
     background-size: auto;
 `;
 export const HeaderWrapper = styled.div`

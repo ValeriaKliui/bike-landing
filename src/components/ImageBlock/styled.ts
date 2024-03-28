@@ -12,7 +12,7 @@ export const SectionWrapper = styled.section<{
         'inset 0 0 0 100vmax rgba(232, 181, 119, 0.2)'};
     padding: 8.5em 0;
     color: ${({ $colorType, theme }) =>
-        $colorType === ColorType.light ? theme.white : 'inherit'};
+        $colorType === ColorType.light ? theme.colors.white : 'inherit'};
 `;
 export const Container = styled.div`
     display: flex;
@@ -26,5 +26,5 @@ export const Title = styled.h2<{
     $colorType: ColorType;
 }>`
     color: ${({ $colorType, theme }) =>
-        $colorType === ColorType.light ? 'inherit' : theme.primary};
+        $colorType === ColorType.light ? 'inherit' : theme.colors.primary};
 `;

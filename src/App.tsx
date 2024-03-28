@@ -14,6 +14,8 @@ import { BikeBlock } from './components/BikeBlock';
 import { PARAMETERS, PARAMETERS_EXTRA } from './constants';
 import pathBottomSrc from '@assets/images/path_bottom.svg';
 import { Mobile } from './components/Mobile';
+import pathImgSrc from '@assets/images/path_img.svg';
+import pathImgBottomSrc from '@assets/images/Path_img_bottom.svg';
 
 const Main = styled.main`
     flex-grow: 1;
@@ -28,6 +30,24 @@ const Wrapper = styled.div`
         display: block;
     }
 `;
+const PathWrapper = styled.div`
+    position: relative;
+    z-index: 0;
+    &::before {
+        content: url(${pathImgSrc});
+        position: absolute;
+        top: -59%;
+        right: 0;
+        display: block;
+    }
+    &::after {
+        content: url(${pathImgBottomSrc});
+        position: absolute;
+        top: 100%;
+        right: 0;
+        display: block;
+    }
+`;
 
 const App = () => (
     <>
@@ -38,12 +58,14 @@ const App = () => (
                 title="Мощная батарея и экономичный расход заряда позволяют преодолевать расстояния до 45 км"
                 advantages={PARAMETERS}
             />
-            <ImageBlock
-                title="Высокая скорость передвижения"
-                text="Двигатель мощностью до 600 Вт позволяет развивать скорость до 25 км/ч."
-                src={PeopleImg}
-                colorType={ColorType.light}
-            />
+            <PathWrapper>
+                <ImageBlock
+                    title="Высокая скорость передвижения"
+                    text="Двигатель мощностью до 600 Вт позволяет развивать скорость до 25 км/ч."
+                    src={PeopleImg}
+                    colorType={ColorType.light}
+                />
+            </PathWrapper>
             <Design />
             <Advantages
                 title="Заботится о вашей безопасности"

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import PathSrc from '@assets/images/path_top.svg';
+import { devices, media } from '../Theme/constants';
 
 export const SectionContainer = styled.section`
     margin: 0;
@@ -13,6 +14,9 @@ export const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2em;
+    ${devices.lg} {
+        flex-basis: 70%;
+    }
 `;
 export const Title = styled.h2`
     margin: 0;
@@ -25,7 +29,7 @@ export const Icons = styled.div`
     gap: 1.5em;
 `;
 export const IconContainer = styled.div`
-    background-color: ${({ theme }) => theme.dark};
+    background-color: ${({ theme }) => theme.colors.dark};
     width: fit-content;
     padding: 0.5em 1em;
     border-radius: 10px;

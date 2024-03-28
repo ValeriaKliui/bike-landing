@@ -1,10 +1,10 @@
 import { DESIGN_CARDS_INFO } from '@/constants';
 import { DesignCard } from './DesignCard';
-import { Container, Title } from './styled';
+import { Container, Title, Wrapper } from './styled';
 
 export const Design = () => (
     <section>
-        <div className="wrapper">
+        <Wrapper className="wrapper">
             <Title>
                 Лаконичный современный дизайн, в котором нет ничего лишнего
             </Title>
@@ -18,6 +18,6 @@ export const Design = () => (
                     />
                 ))}
             </Container>
-        </div>
+        </Wrapper>
     </section>
 );

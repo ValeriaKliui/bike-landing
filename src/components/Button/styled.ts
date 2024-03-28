@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices, media } from '../Theme/constants';
 
 export const ButtonStyled = styled.button<{ $primary?: boolean }>`
     font-size: 16px;
@@ -7,7 +8,11 @@ export const ButtonStyled = styled.button<{ $primary?: boolean }>`
     padding: 1em 2em;
     border-radius: 50px;
     background-color: ${({ theme, $primary }) =>
-        $primary ? theme.primary : theme.button};
-    color: ${({ theme, $primary }) => ($primary ? theme.white : 'inherit')};
+        $primary ? theme.colors.primary : theme.colors.white};
+    color: ${({ theme, $primary }) =>
+        $primary ? theme.colors.white : 'inherit'};
     cursor: pointer;
+    ${devices.lg} {
+        font-size: 10px;
+    }
 `;

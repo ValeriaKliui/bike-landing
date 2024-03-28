@@ -21,7 +21,7 @@ export const Question = styled.h4`
         width: 100px;
         height: 3px;
         margin-top: 20px;
-        background-color: ${({ theme }) => theme.primary};
+        background-color: ${({ theme }) => theme.colors.primary};
     }
 `;
 export const FAQContainer = styled.div`

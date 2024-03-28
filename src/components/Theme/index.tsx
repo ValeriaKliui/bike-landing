@@ -1,26 +1,22 @@
 import { useMemo, useState } from 'react';
 import { ThemeContext, ThemeProvider } from 'styled-components';
-import { BaseTheme, ThemeType, ThemeProps } from './interface';
+import { BaseTheme, ThemeType, ThemeProps, ScreenSizes } from './interface';
 import LightNoiseSrc from '@assets/images/lightNoise.svg';
 import DarkNoiseSrc from '@assets/images/darkNoise.svg';
+import { colors, devices, darkThemeColors } from './constants';
 
 const themeLight: BaseTheme = {
-    primary: '#FF4C0D',
-    white: '#f1f1f1',
-    background: '#E0E0E0',
-    circlesBackground: '#fc4f1f8b',
-    disabled: '#826157',
-    dark: '#151515',
-    mainColor: '#151515',
-    subColor: '#f1f1f1',
+    colors,
+    devices,
     noiseSrc: LightNoiseSrc,
 };
 
 const themeDark: BaseTheme = {
     ...themeLight,
-    mainColor: '#f1f1f1',
-    subColor: '#151515',
-    background: '#222222',
+    colors: {
+        ...themeLight.colors,
+        ...darkThemeColors,
+    },
     noiseSrc: DarkNoiseSrc,
 };
 

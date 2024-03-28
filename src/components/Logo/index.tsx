@@ -5,6 +5,8 @@ import { ColorType } from '../ImageBlock/interfaces';
 export const Logo = styled(LogoSvg)<{ $type: ColorType }>`
     path {
         fill: ${({ theme, $type = ColorType.primary }) =>
-            $type === ColorType.primary ? theme.primary : theme.white};
+            $type === ColorType.primary
+                ? theme.colors.primary
+                : theme.colors.white};
     }
 `;

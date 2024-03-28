@@ -7,7 +7,8 @@ export const SectionContainer = styled.section`
     z-index: 10;
 `;
 export const Container = styled.div`
-    background-color: ${({ theme }) => theme.subColor};
+    background-color: ${({ theme }) => theme.colors.subColor};
+    border-radius: 15px;
     display: flex;
     padding: 3em;
     position: relative;

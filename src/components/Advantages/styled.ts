@@ -14,7 +14,7 @@ export const AdvantagesGrid = styled.div`
 `;
 export const SectionTitle = styled.h2<{ $colorType: ColorType }>`
     color: ${({ $colorType, theme }) =>
-        $colorType === ColorType.primary ? theme.primary : 'inherit'};
+        $colorType === ColorType.primary ? theme.colors.primary : 'inherit'};
 `;
 export const AdvantageTextContainer = styled.div<{
     $index: number;
@@ -24,9 +24,12 @@ export const AdvantageTextContainer = styled.div<{
     flex-direction: column;
     grid-column-start: ${({ $index }) => $index + 1};
     color: ${({ theme, $isChoosen }) =>
-        $isChoosen ? 'inherit' : theme.disabled};
+        $isChoosen ? 'inherit' : theme.colors.disabled};
     &:hover {
-        transform: scale(1.03) translateY(2px);
+        transform: scale(1.01);
+        h4 {
+            color: ${({ theme }) => theme.colors.primary};
+        }
     }
 `;
 export const Title = styled.h4<{
@@ -34,7 +37,7 @@ export const Title = styled.h4<{
     $isChoosen: boolean;
 }>`
     color: ${({ theme, $isChoosen }) =>
-        $isChoosen ? theme.primary : theme.disabled};
+        $isChoosen ? theme.colors.primary : theme.colors.disabled};
     &::after {
         content: '';
         display: block;
@@ -42,7 +45,7 @@ export const Title = styled.h4<{
         height: 3px;
         margin-top: 1em;
         background-color: ${({ theme, $isChoosen }) =>
-            $isChoosen ? theme.primary : theme.disabled};
+            $isChoosen ? theme.colors.primary : theme.colors.disabled};
     }
 `;
 export const AdvantageImage = styled.img<{
@@ -59,6 +62,6 @@ export const AdvantageImage = styled.img<{
         $isFirst ? `1/${$totalAmount}` : $totalAmount};
     cursor: ${({ $isFirst }) => !$isFirst && 'pointer'};
     &:hover {
-        transform: ${({ $isFirst }) => !$isFirst && 'scale(1.05)'};
+        transform: ${({ $isFirst }) => !$isFirst && 'scale(1.02)'};
     }
 `;
