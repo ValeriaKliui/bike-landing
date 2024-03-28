@@ -4,7 +4,9 @@ import PeopleOnBikesSrc from '@assets/images/advantage_bike.png';
 import PeopleTalkingSrc from '@assets/images/people_talking.png';
 import CompanySrc from '@assets/images/company.png';
 import LightsSrc from '@assets/images/scooter_lights.png';
-import LightSrc from '@assets/images/scooter_light.png';
+import BrakeSrc from '@assets/images/brake.png';
+import FarahSrc from '@assets/images/farah.png';
+import ReflectionSrc from '@assets/images/reflection.png';
 
 export const DESIGN_CARDS_INFO = [
     {
@@ -69,19 +71,19 @@ export const PARAMETERS_EXTRA = [
         advantage: 'Двойная тормозная система',
         description:
             'При нажатии наручку тормоза системы переднего и заднего колеса активируются последовательно, сокращая тормозной путь и обеспечивая безопасную и плавную остановку.',
-        imgSrc: LightSrc,
+        imgSrc: BrakeSrc,
     },
     {
         advantage: 'Яркая задняя фара',
         description:
             'При включении ходовых огней задняя фара включается автоматически. При нажатии на ручку тормоза она начинает мигать, предупреждая других участников движения.',
-        imgSrc: PanelSrc,
+        imgSrc: FarahSrc,
     },
     {
-        advantage: 'Отражатели спереди, сбоку и сзади',
+        advantage: 'Отражатели со всех сторон',
         description:
             'Улучшенные отражатели, размещенные с четырех сторон, делают вашу поездку в темное время суток безопаснее.',
-        imgSrc: ScooterSrc,
+        imgSrc: ReflectionSrc,
     },
 ];
 export const REVIEWS = [

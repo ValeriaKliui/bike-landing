@@ -7,7 +7,7 @@ export const SectionContainer = styled.section`
     z-index: 10;
 `;
 export const Container = styled.div`
-    background-color: ${({ theme }) => theme.white};
+    background-color: ${({ theme }) => theme.subColor};
     display: flex;
     padding: 3em;
     position: relative;

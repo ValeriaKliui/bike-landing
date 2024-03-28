@@ -28,19 +28,20 @@ export const Advantages: FC<AdvantageProps> = ({
                         ({ advantage, description, imgSrc }, index) => {
                             const isChoosen = choosenIndex === index;
                             const isLast = index === advantages.length - 1;
-                            const sum = index + choosenIndex;
-                            const imgIndex =
-                                sum >= advantages.length
-                                    ? sum - advantages.length
-                                    : sum;
-                            // const isShowed = choosenIndex + 1;
-                            console.log(choosenIndex + 1, imgIndex);
+                            const imgNextIndex =
+                                advantages.length - 1 === choosenIndex
+                                    ? 0
+                                    : choosenIndex + 1;
+
+                            const isShowing =
+                                index === choosenIndex ||
+                                index === imgNextIndex;
 
                             return (
                                 <Fragment key={advantage}>
                                     <AdvantageTextContainer
-                                        $index={index}
                                         onClick={() => chooseAdvantage(index)}
+                                        $index={index}
                                         $isChoosen={isChoosen}
                                     >
                                         <Title
@@ -51,11 +52,16 @@ export const Advantages: FC<AdvantageProps> = ({
                                         </Title>
                                         <p>{description}</p>
                                     </AdvantageTextContainer>
-                                    <AdvantageImage
-                                        src={imgSrc}
-                                        id={index}
-                                        $index={index}
-                                    />
+                                    {isShowing && (
+                                        <AdvantageImage
+                                            src={imgSrc}
+                                            onClick={() =>
+                                                chooseAdvantage(index)
+                                            }
+                                            $isFirst={index === choosenIndex}
+                                            $totalAmount={advantages.length}
+                                        />
+                                    )}
                                 </Fragment>
                             );
                         }

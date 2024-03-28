@@ -24,3 +24,8 @@ export const Question = styled.h4`
         background-color: ${({ theme }) => theme.primary};
     }
 `;
+export const FAQContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 1.3em;
+`;

@@ -8,13 +8,6 @@ export const AdvantagesGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 2em;
-    img {
-        opacity: 0;
-    }
-    /* img:nth-child(2) {
-        grid-column: 1/3;
-        width: 100%;
-    } */
     div {
         cursor: pointer;
     }
@@ -27,31 +20,45 @@ export const AdvantageTextContainer = styled.div<{
     $index: number;
     $isChoosen: boolean;
 }>`
+    display: flex;
+    flex-direction: column;
     grid-column-start: ${({ $index }) => $index + 1};
     color: ${({ theme, $isChoosen }) =>
         $isChoosen ? 'inherit' : theme.disabled};
+    &:hover {
+        transform: scale(1.03) translateY(2px);
+    }
 `;
 export const Title = styled.h4<{
     $isLast: boolean;
     $isChoosen: boolean;
-    $colorType: ColorType;
 }>`
     color: ${({ theme, $isChoosen }) =>
         $isChoosen ? theme.primary : theme.disabled};
     &::after {
         content: '';
         display: block;
-        width: ${({ $isLast }) => ($isLast ? '100%' : '110%')};
-        height: 2px;
+        width: ${({ $isLast }) => ($isLast ? '100%' : '130%')};
+        height: 3px;
         margin-top: 1em;
         background-color: ${({ theme, $isChoosen }) =>
             $isChoosen ? theme.primary : theme.disabled};
     }
 `;
 export const AdvantageImage = styled.img<{
-    $index: number;
+    $isFirst: boolean;
+    $totalAmount: number;
 }>`
-    transition: 1s ease-in;
     grid-row-start: 2;
-    /* opacity: ${({ $index }) => $index}; */
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50%;
+    border-radius: 15px;
+    grid-column: ${({ $isFirst, $totalAmount }) =>
+        $isFirst ? `1/${$totalAmount}` : $totalAmount};
+    cursor: ${({ $isFirst }) => !$isFirst && 'pointer'};
+    &:hover {
+        transform: ${({ $isFirst }) => !$isFirst && 'scale(1.05)'};
+    }
 `;

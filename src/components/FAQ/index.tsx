@@ -1,12 +1,17 @@
 import { FAQ_ITEMS } from '@/constants';
-import { Container, SectionText, TextContainer, Question } from './styled';
-import { Fragment } from 'react/jsx-runtime';
+import {
+    Container,
+    SectionText,
+    TextContainer,
+    Question,
+    FAQContainer,
+} from './styled';
 
 export const FAQ = () => (
     <section>
         <Container className="wrapper">
             <SectionText>
-                <h2>Часто задаваемые вопросы</h2>
+                <h2 className="colored-title">Часто задаваемые вопросы</h2>
                 <TextContainer>
                     <p>
                         Все ваши часто задаваемые вопросы об электросамокате Mi
@@ -14,14 +19,14 @@ export const FAQ = () => (
                     </p>
                 </TextContainer>
             </SectionText>
-            <div>
+            <FAQContainer>
                 {FAQ_ITEMS.map(({ question, answer }) => (
-                    <Fragment key={question}>
+                    <div key={question}>
                         <Question>{question}</Question>
                         <p>{answer}</p>
-                    </Fragment>
+                    </div>
                 ))}
-            </div>
+            </FAQContainer>
         </Container>
     </section>
 );
