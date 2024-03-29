@@ -1,6 +1,6 @@
 import 'styled-components';
 
-import { BaseTheme } from './components/Theme/interface';
+import { BaseTheme } from './providers/Theme/interface';
 
 declare module 'styled-components' {
     export interface DefaultTheme extends BaseTheme {}

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ColorType } from './interfaces';
+import { devices } from '../../providers/Theme/constants';
 
 export const SectionWrapper = styled.section<{
     $src: string;
@@ -13,6 +14,9 @@ export const SectionWrapper = styled.section<{
     padding: 8.5em 0;
     color: ${({ $colorType, theme }) =>
         $colorType === ColorType.light ? theme.colors.white : 'inherit'};
+    ${devices.sm} {
+        padding: 2em 0;
+    }
 `;
 export const Container = styled.div`
     display: flex;
@@ -21,6 +25,9 @@ export const Container = styled.div`
 `;
 export const Text = styled.div`
     max-width: 34%;
+    ${devices.md} {
+        max-width: 74%;
+    }
 `;
 export const Title = styled.h2<{
     $colorType: ColorType;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import BikeImg from '@assets/images/bike.png';
-import { devices, media } from '../Theme/constants';
+import { devices } from '../../providers/Theme/constants';
 
 export const SectionContainer = styled.section`
     padding: 8em 0;
@@ -23,4 +23,11 @@ export const Container = styled.div`
 export const Subtitle = styled.h3`
     max-width: 43%;
     margin-bottom: 1em;
+    ${devices.sm} {
+        max-width: 83%;
+        white-space: pre-line;
+    }
+    ${devices.sm} {
+        max-width: 93%;
+    }
 `;

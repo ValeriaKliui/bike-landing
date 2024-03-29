@@ -1,5 +1,4 @@
 import { Header } from '@components/Header';
-import styled from 'styled-components';
 import { Advantages } from './components/Advantages';
 import { Footer } from './components/Footer';
 import { ImageBlock } from './components/ImageBlock';
@@ -12,81 +11,56 @@ import { ColorType } from './components/ImageBlock/interfaces';
 import { Reviews } from './components/Reviews';
 import { BikeBlock } from './components/BikeBlock';
 import { PARAMETERS, PARAMETERS_EXTRA } from './constants';
-import pathBottomSrc from '@assets/images/path_bottom.svg';
 import { Mobile } from './components/Mobile';
-import pathImgSrc from '@assets/images/path_img.svg';
-import pathImgBottomSrc from '@assets/images/Path_img_bottom.svg';
+import { MenuMobile } from './components/MenuMobile';
+import { Main, PathWrapper, Wrapper } from './constants/appStyled';
+import { useContext } from 'react';
+import { AppContext } from './providers/App';
+import { AppContextType } from './providers/App/interfaces';
 
-const Main = styled.main`
-    flex-grow: 1;
-`;
-const Wrapper = styled.div`
-    position: relative;
-    &::after {
-        content: url(${pathBottomSrc});
-        position: absolute;
-        bottom: -176px;
-        right: 0;
-        display: block;
-    }
-`;
-const PathWrapper = styled.div`
-    position: relative;
-    z-index: 0;
-    &::before {
-        content: url(${pathImgSrc});
-        position: absolute;
-        top: -59%;
-        right: 0;
-        display: block;
-    }
-    &::after {
-        content: url(${pathImgBottomSrc});
-        position: absolute;
-        top: 100%;
-        right: 0;
-        display: block;
-    }
-`;
+const App = () => {
+    const { isMenuOpened } = useContext(AppContext) as AppContextType;
 
-const App = () => (
-    <>
-        <Header />
-        <Main>
-            <Preview />
-            <Advantages
-                title="Мощная батарея и экономичный расход заряда позволяют преодолевать расстояния до 45 км"
-                advantages={PARAMETERS}
-            />
-            <PathWrapper>
-                <ImageBlock
-                    title="Высокая скорость передвижения"
-                    text="Двигатель мощностью до 600 Вт позволяет развивать скорость до 25 км/ч."
-                    src={PeopleImg}
-                    colorType={ColorType.light}
+    return (
+        <>
+            <Header />
+            <Main>
+                <Preview />
+                <Advantages
+                    title="Мощная батарея и экономичный расход заряда позволяют преодолевать расстояния до 45 км"
+                    advantages={PARAMETERS}
                 />
-            </PathWrapper>
-            <Design />
-            <Advantages
-                title="Заботится о вашей безопасности"
-                advantages={PARAMETERS_EXTRA}
-                colorType={ColorType.primary}
-            />
-            <Mobile />
-            <Wrapper>
-                <ImageBlock
-                    title="О бренде Xiaomi"
-                    text="Компания Xiaomi была основана предпринимателем Лей Цзюнем в 2010 году под девизом - «Инновации для всех». Мы верим, что высококачественные продукты и передовые технологии должны быть доступны каждому."
-                    src={MeetingImg}
+                <PathWrapper>
+                    <ImageBlock
+                        title="Высокая скорость передвижения"
+                        text="Двигатель мощностью до 600 Вт позволяет развивать скорость до 25 км/ч."
+                        src={PeopleImg}
+                        colorType={ColorType.light}
+                    />
+                </PathWrapper>
+                <Design />
+                <Advantages
+                    title="Заботится о вашей безопасности"
+                    advantages={PARAMETERS_EXTRA}
                     colorType={ColorType.primary}
                 />
-            </Wrapper>
-            <Reviews />
-            <FAQ />
-            <BikeBlock />
-        </Main>
-        <Footer />
-    </>
-);
+                <Mobile />
+                <Wrapper>
+                    <ImageBlock
+                        title="О бренде Xiaomi"
+                        text="Компания Xiaomi была основана предпринимателем Лей Цзюнем в 2010 году под девизом - «Инновации для всех». Мы верим, что высококачественные продукты и передовые технологии должны быть доступны каждому."
+                        src={MeetingImg}
+                        colorType={ColorType.primary}
+                    />
+                </Wrapper>
+                <Reviews />
+                <FAQ />
+                <BikeBlock />
+            </Main>
+            <Footer />
+            {isMenuOpened && <MenuMobile />}
+        </>
+    );
+};
 
 export default App;

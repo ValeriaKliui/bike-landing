@@ -1,5 +1,6 @@
-import { css } from 'styled-components';
-import { ScreenSizes } from './interface';
+import { BaseTheme, ScreenSizes } from './interface';
+import LightNoiseSrc from '@assets/images/lightNoise.svg';
+import DarkNoiseSrc from '@assets/images/darkNoise.svg';
 
 export const devices = {
     xs: `@media (max-width: ${ScreenSizes.xs}px)`,
@@ -25,4 +26,19 @@ export const darkThemeColors = {
     mainColor: '#f1f1f1',
     subColor: '#151515',
     background: '#222222',
+};
+
+export const themeLight: BaseTheme = {
+    colors,
+    devices,
+    noiseSrc: LightNoiseSrc,
+};
+
+export const themeDark: BaseTheme = {
+    ...themeLight,
+    colors: {
+        ...themeLight.colors,
+        ...darkThemeColors,
+    },
+    noiseSrc: DarkNoiseSrc,
 };

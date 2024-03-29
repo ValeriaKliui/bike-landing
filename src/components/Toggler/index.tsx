@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Container, Option } from './styled';
-import { ThemeType } from '../Theme/interface';
+import { ThemeContextType, ThemeType } from '../../providers/Theme/interface';
 
 export const Toggler = () => {
-    const { changeTheme, theme } = useContext(ThemeContext);
+    const { changeTheme, theme } = useContext(ThemeContext) as ThemeContextType;
 
     return (
         <Container>

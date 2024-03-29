@@ -9,6 +9,8 @@ import {
     SectionTitle,
 } from './styled';
 import { FC, Fragment, useState } from 'react';
+import { useWindowSize } from '@uidotdev/usehooks';
+import { ScreenSizes } from '../../providers/Theme/interface';
 
 export const Advantages: FC<AdvantageProps> = ({
     title,
@@ -16,8 +18,9 @@ export const Advantages: FC<AdvantageProps> = ({
     colorType = ColorType.light,
 }) => {
     const [choosenIndex, setIsChoosenIndex] = useState(0);
-
     const chooseAdvantage = (index: number) => setIsChoosenIndex(index);
+
+    const { width } = useWindowSize();
 
     return (
         <SectionWrapper>
@@ -35,7 +38,8 @@ export const Advantages: FC<AdvantageProps> = ({
 
                             const isShowing =
                                 index === choosenIndex ||
-                                index === imgNextIndex;
+                                index === imgNextIndex ||
+                                (width && width <= ScreenSizes.md);
 
                             return (
                                 <Fragment key={advantage}>

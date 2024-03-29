@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../../providers/Theme/constants';
 
 export const SectionContainer = styled.section`
     overflow: hidden;
@@ -21,6 +22,9 @@ export const Review = styled.div`
     flex-shrink: 0;
     flex-basis: 30%;
     border-radius: 15px;
+    ${devices.md} {
+        flex-basis: 75%;
+    }
 `;
 export const Name = styled.h4`
     &::after {

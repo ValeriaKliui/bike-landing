@@ -31,3 +31,8 @@ export type BaseTheme = {
 export type ThemeProps = {
     children: ReactNode;
 };
+
+export type ThemeContextType = {
+    theme: ThemeType;
+    changeTheme: (theme: ThemeType) => void;
+};

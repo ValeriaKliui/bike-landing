@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 import BikeImg from '@assets/images/bike.png';
-import { media } from '../Theme/constants';
+import { devices } from '../../providers/Theme/constants';
 
 export const HeaderContainer = styled.header`
     background: url(${BikeImg}) no-repeat fixed;
@@ -18,4 +18,9 @@ export const Container = styled.div`
     display: flex;
     gap: 4em;
     align-items: center;
+`;
+export const ButtonWrapper = styled.div`
+    ${devices.md} {
+        display: none;
+    }
 `;

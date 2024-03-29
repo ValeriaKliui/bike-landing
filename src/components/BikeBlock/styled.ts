@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import PathLine from '@assets/images/path_line.png';
 import PathLineRight from '@assets/images/Path_right.png';
+import { devices } from '../../providers/Theme/constants';
 
 export const SectionContainer = styled.section`
     position: relative;
@@ -27,6 +28,9 @@ export const Container = styled.div`
         top: -210px;
         right: -60px;
     }
+    ${devices.md} {
+        flex-direction: column;
+    }
 `;
 export const Title = styled.h2`
     margin-bottom: 0.3em;
@@ -39,16 +43,35 @@ export const LeftContainer = styled.div`
     flex-direction: column;
     gap: 12em;
     align-items: flex-start;
+    ${devices.md} {
+        margin-bottom: 1em;
+    }
+    ${devices.sm} {
+        gap: 2em;
+        align-items: center;
+    }
 `;
 export const MediaContainer = styled.div`
     position: relative;
     flex-basis: 50%;
     display: flex;
     justify-content: flex-end;
+    ${devices.md} {
+        position: static;
+        justify-content: flex-start;
+    }
+    ${devices.sm} {
+        justify-content: center;
+    }
 `;
 export const Complect = styled.div`
     position: relative;
     z-index: 2;
+`;
+export const ComplectText = styled.div`
+    ${devices.md} {
+        display: none;
+    }
 `;
 export const BikeImage = styled.img`
     position: absolute;
@@ -65,4 +88,24 @@ export const BikeImage = styled.img`
                     0
                 )
                 4%);
+    ${devices.md} {
+        top: -17%;
+        right: -30%;
+        max-height: 450px;
+    }
+    ${devices.sm} {
+        display: none;
+    }
+`;
+export const ImgBikeMobile = styled.img`
+    display: none;
+    ${devices.sm} {
+        display: block;
+    }
+`;
+export const TogglerContainer = styled.div`
+    ${devices.sm} {
+        display: flex;
+        justify-content: center;
+    }
 `;

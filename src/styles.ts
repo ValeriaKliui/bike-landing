@@ -5,7 +5,7 @@ import GilroyTtf from '@assets/fonts/Gilroy-Regular.ttf';
 import GilroySemiboldWoff from '@assets/fonts/Gilroy-SemiBold.woff';
 import GilroySemiboldEot from '@assets/fonts/Gilroy-SemiBold.eot';
 import GilroySemiboldTtf from '@assets/fonts/Gilroy-SemiBold.ttf';
-import { devices } from './components/Theme/constants';
+import { devices } from './providers/Theme/constants';
 
 const styled = { createGlobalStyle };
 
@@ -45,12 +45,6 @@ export const GlobalStyles = styled.createGlobalStyle`
         font-family: 'Gilroy';
         font-size: 14px;
         color: ${({ theme }) => theme.colors.mainColor};
-        ${devices.lg} {
-            font-size: 10px;
-        }
-        ${devices.md} {
-            font-size: 8px;
-        }
     }
     p {
         line-height: 150%;
@@ -92,24 +86,48 @@ export const GlobalStyles = styled.createGlobalStyle`
         ${devices.md} {
             max-width: 540px;
         }
+        ${devices.sm} {
+            max-width: 380px;
+        }
+        ${devices.xs} {
+            max-width: 280px;
+        }
     }
     h1 {
         color: ${({ theme }) => theme.colors.primary};
         font-size: 5.7em;
+        ${devices.md} {
+            font-size: 2.8em;
+        }
+        ${devices.xs} {
+            font-size: 2.1em;
+        }
     }
     h2 {
         font-family: 'Gilroy-Semibold';
         font-size: 3.2em;
         margin-bottom: 1em;
+        ${devices.md} {
+            font-size: 2.1em;
+        }
     }
     h3 {
         font-family: 'Gilroy-Semibold';
         font-size: 2.2em;
+        ${devices.md} {
+            font-size: 1.4em;
+        }
+        ${devices.xs} {
+            font-size: 1.14em;
+        }
     }
     h4 {
         font-family: 'Gilroy-Semibold';
         font-size: 1.4em;
         margin-bottom: 1em;
+        ${devices.md} {
+            margin-bottom: 0.5em;
+        }
     }
     img {
         max-width: 100%;
@@ -117,6 +135,9 @@ export const GlobalStyles = styled.createGlobalStyle`
     }
     section {
         margin-bottom: 8.6em;
+        ${devices.md} {
+            margin-bottom: 2.6em;
+        }
     }
     .colored-title {
         color: ${({ theme }) => theme.colors.primary};

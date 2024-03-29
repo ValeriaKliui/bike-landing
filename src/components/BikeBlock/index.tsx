@@ -10,15 +10,18 @@ import {
     LeftContainer,
     Complect,
     SectionContainer,
+    ComplectText,
+    ImgBikeMobile,
+    TogglerContainer,
 } from './styled';
 import BikeLightImg from '@assets/images/bike_light.png';
 import BikeDarkImg from '@assets/images/bike_dark.png';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { ThemeType } from '../Theme/interface';
+import { ThemeContextType, ThemeType } from '../../providers/Theme/interface';
 
 export const BikeBlock = () => {
-    const { theme } = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext) as ThemeContextType;
 
     return (
         <SectionContainer>
@@ -27,8 +30,17 @@ export const BikeBlock = () => {
                     <div>
                         <Title>Mi Electric Scooter Pro 2</Title>
                         <Subtitle className="colored-title">2000 BYN</Subtitle>
-                        <Toggler />
+                        <TogglerContainer>
+                            <Toggler />
+                        </TogglerContainer>
                     </div>
+                    <ImgBikeMobile
+                        src={
+                            theme === ThemeType.dark
+                                ? BikeLightImg
+                                : BikeDarkImg
+                        }
+                    />
                     <Button text="Купить" primary />
                 </LeftContainer>
                 <MediaContainer>
@@ -41,11 +53,11 @@ export const BikeBlock = () => {
                     />
                     <Complect>
                         <h4>Комплект поставки</h4>
-                        <div>
+                        <ComplectText>
                             {COMPLECT.map((item) => (
                                 <p key={item}>{item}</p>
                             ))}
-                        </div>
+                        </ComplectText>
                     </Complect>
                 </MediaContainer>
             </Container>

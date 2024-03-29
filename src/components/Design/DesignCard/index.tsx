@@ -1,8 +1,17 @@
-import { Container } from './styled';
+import { ContainerDesktop, ContainerMobile, Image } from './styled';
 
 export const DesignCard = ({ imageSrc, title, text }) => (
-    <Container $src={imageSrc}>
-        <h4>{title}</h4>
-        <p>{text}</p>
-    </Container>
+    <>
+        <ContainerDesktop $src={imageSrc}>
+            <h4>{title}</h4>
+            <p>{text}</p>
+        </ContainerDesktop>
+        <ContainerMobile>
+            <Image src={imageSrc} />
+            <div>
+                <h4>{title}</h4>
+                <p>{text}</p>
+            </div>
+        </ContainerMobile>
+    </>
 );

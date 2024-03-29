@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { devices, media } from '../Theme/constants';
+import { devices } from '../../providers/Theme/constants';
 
 export const ButtonStyled = styled.button<{ $primary?: boolean }>`
     font-size: 16px;
@@ -13,6 +13,6 @@ export const ButtonStyled = styled.button<{ $primary?: boolean }>`
         $primary ? theme.colors.white : 'inherit'};
     cursor: pointer;
     ${devices.lg} {
-        font-size: 10px;
+        font-size: 16px;
     }
 `;

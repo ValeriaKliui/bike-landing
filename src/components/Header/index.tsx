@@ -1,7 +1,13 @@
 import { Nav } from '../Nav';
-import { Container, HeaderWrapper, HeaderContainer } from './styled';
+import {
+    Container,
+    HeaderWrapper,
+    HeaderContainer,
+    ButtonWrapper,
+} from './styled';
 import { Button } from '../Button';
 import { Logo } from '../Logo';
+import { Burger } from '../Burger';
 
 export const Header = () => (
     <HeaderContainer>
@@ -10,7 +16,10 @@ export const Header = () => (
                 <Logo />
                 <Nav />
             </Container>
-            <Button text="Купить" />
+            <ButtonWrapper>
+                <Button text="Купить" />
+            </ButtonWrapper>
+            <Burger />
         </HeaderWrapper>
     </HeaderContainer>
 );
