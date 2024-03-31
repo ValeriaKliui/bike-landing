@@ -10,7 +10,7 @@ import {
 } from './styled';
 import { FC, Fragment, useState } from 'react';
 import { useWindowSize } from '@uidotdev/usehooks';
-import { ScreenSizes } from '../../providers/Theme/interface';
+import { ScreenSizes } from '@providers/Theme/interface';
 
 export const Advantages: FC<AdvantageProps> = ({
     title,

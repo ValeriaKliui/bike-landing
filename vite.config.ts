@@ -9,6 +9,8 @@ export default defineConfig({
             '@': path.resolve(__dirname, './src'),
             '@assets': path.resolve(__dirname, './src/assets'),
             '@components': path.resolve(__dirname, './src/components'),
+            '@constants': path.resolve(__dirname, './src/constants'),
+            '@providers': path.resolve(__dirname, './src/providers'),
         },
     },
     plugins: [svgr(), react()],

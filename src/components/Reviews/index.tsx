@@ -1,28 +1,6 @@
-import { REVIEWS } from '@/constants';
-import { Review, SectionContainer, Name } from './styled';
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 5,
-        slidesToSlide: 3,
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-        slidesToSlide: 3,
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2,
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1,
-    },
-};
+import { Slider } from '../Slider';
+import { SectionContainer } from './styled';
 
 export const Reviews = () => {
     // const reviewRef = useRef<HTMLDivElement>(null);
@@ -65,14 +43,7 @@ export const Reviews = () => {
         <SectionContainer>
             <div className="wrapper">
                 <h2>Отзывы о Mi Scooter Pro 2</h2>
-                <Carousel responsive={responsive}>
-                    {REVIEWS.map(({ name, review }, index) => (
-                        <Review key={index}>
-                            <Name>{name || 'Имя скрыто'}</Name>
-                            <p>{review}</p>
-                        </Review>
-                    ))}
-                </Carousel>
+                <Slider />
             </div>
         </SectionContainer>
         // <SectionContainer ref={sectionRef}>
