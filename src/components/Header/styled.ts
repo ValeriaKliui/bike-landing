@@ -6,6 +6,16 @@ export const HeaderContainer = styled.header`
     background: url(${BikeImg}) no-repeat fixed;
     background-position: right top;
     background-size: auto;
+    ${devices.xxxl} {
+        background-position: 70% top;
+    }
+    ${devices.xxl} {
+        background-position: 500px top;
+    }
+    ${devices.xl} {
+        background-position: 400px top;
+        background-size: contain;
+    }
 `;
 export const HeaderWrapper = styled.div`
     display: flex;

@@ -1,47 +1,55 @@
 import { REVIEWS } from '@/constants';
-import Carousel from 'react-multi-carousel';
 import './index.css';
-import { Name, Review } from './styled';
+import ArrowSvg from '@assets/icons/Arrow.svg?react';
+import {
+    CarouselStyled,
+    LeftButton,
+    Name,
+    Review,
+    RightButton,
+} from './styled';
+import { ScreenSizes } from '@/providers/Theme/interface';
 
 export const Slider = () => {
     const responsive = {
         desktop: {
-            breakpoint: { max: 3000, min: 1024 },
+            breakpoint: { max: 10000, min: ScreenSizes.md },
             items: 2.5,
-            slidesToSlide: 3,
+            slidesToSlide: 2,
         },
         tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2,
+            breakpoint: { max: ScreenSizes.md, min: ScreenSizes.sm },
+            items: 1.5,
+            slidesToSlide: 1,
         },
         mobile: {
-            breakpoint: { max: 464, min: 0 },
+            breakpoint: { max: ScreenSizes.sm, min: 0 },
             items: 1,
+            slidesToSlide: 1,
         },
     };
 
-    const CustomLeftArrow = ({ onClick, ...rest }) => {
-        console.log(rest);
-        return (
-            <button
-                className="custom-left-arrow"
-                onClick={() => onClick()}
-                disabled={false}
-            />
-        );
-    };
+    const CustomLeftArrow = ({ onClick }) => (
+        <LeftButton onClick={onClick}>
+            <ArrowSvg />
+        </LeftButton>
+    );
+
     const CustomRightArrow = ({ onClick }) => (
-        <button className="custom-right-arrow" onClick={() => onClick()} />
+        <RightButton onClick={onClick}>
+            <ArrowSvg />
+        </RightButton>
     );
 
     return (
         <div style={{ position: 'relative' }}>
-            <Carousel
+            <CarouselStyled
                 responsive={responsive}
-                containerClass="carousel"
                 customLeftArrow={<CustomLeftArrow />}
                 customRightArrow={<CustomRightArrow />}
                 renderArrowsWhenDisabled
+                sliderClass="sliderList"
+                itemClass="carouselItem"
             >
                 {REVIEWS.map(({ name, review }, index) => (
                     <Review key={index}>
@@ -49,7 +57,7 @@ export const Slider = () => {
                         <p>{review}</p>
                     </Review>
                 ))}
-            </Carousel>
+            </CarouselStyled>
         </div>
     );
 };

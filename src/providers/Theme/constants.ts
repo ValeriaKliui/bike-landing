@@ -8,7 +8,8 @@ export const devices = {
     md: `@media (max-width: ${ScreenSizes.md}px)`,
     lg: `@media (max-width: ${ScreenSizes.lg}px)`,
     xl: `@media (max-width: ${ScreenSizes.xl}px)`,
-    xxl: `@media (min-width: ${ScreenSizes.xxl}px)`,
+    xxl: `@media (max-width: ${ScreenSizes.xxl}px)`,
+    xxxl: `@media (min-width: ${ScreenSizes.xxl}px)`,
 };
 
 export const colors = {

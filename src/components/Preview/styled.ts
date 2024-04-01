@@ -8,6 +8,16 @@ export const SectionContainer = styled.section`
     background: url(${BikeImg}) no-repeat fixed;
     background-size: auto;
     background-position: right top;
+    ${devices.xxxl} {
+        background-position: 70% top;
+    }
+    ${devices.xxl} {
+        background-position: 500px top;
+    }
+    ${devices.xl} {
+        background-position: 400px top;
+        background-size: contain;
+    }
     ${devices.lg} {
         padding: 4em 0;
     }

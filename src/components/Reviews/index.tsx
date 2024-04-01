@@ -1,6 +1,5 @@
 import 'react-multi-carousel/lib/styles.css';
 import { Slider } from '../Slider';
-import { SectionContainer } from './styled';
 
 export const Reviews = () => {
     // const reviewRef = useRef<HTMLDivElement>(null);
@@ -40,12 +39,12 @@ export const Reviews = () => {
     // };
 
     return (
-        <SectionContainer>
+        <section>
             <div className="wrapper">
                 <h2>Отзывы о Mi Scooter Pro 2</h2>
                 <Slider />
             </div>
-        </SectionContainer>
+        </section>
         // <SectionContainer ref={sectionRef}>
         //     <div className="wrapper">
         //         <h2>Отзывы о Mi Scooter Pro 2</h2>
@@ -67,7 +66,7 @@ export const Reviews = () => {
         //                     <ArrowSvg />
         //                 </LeftButton>
         //                 <RightButton onClick={moveSliderRight}>
-        //                     <ArrowSvg />
+        //
         //                 </RightButton>
         //             </Buttons>
         //         </Container>
