@@ -14,7 +14,7 @@ export const ImageBlock: FC<ImageBlockProps> = ({
     return (
         <SectionWrapper $src={src} $colorType={colorType}>
             <Container className="wrapper">
-                <Logo $type={colorType} />
+                <Logo />
                 <Text>
                     <Title $colorType={colorType}>{title}</Title>
                     {textSentences.map((sentence) => (

@@ -24,8 +24,8 @@ export type BaseTheme = {
         mainColor: string;
         subColor: string;
     };
+    src: { previewBike: string; noise: string };
     devices: Record<keyof typeof ScreenSizes, string>;
-    noiseSrc: string;
 };
 
 export type ThemeProps = {

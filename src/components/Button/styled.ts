@@ -10,8 +10,15 @@ export const ButtonStyled = styled.button<{ $primary?: boolean }>`
     background-color: ${({ theme, $primary }) =>
         $primary ? theme.colors.primary : theme.colors.white};
     color: ${({ theme, $primary }) =>
-        $primary ? theme.colors.white : 'inherit'};
+        $primary ? theme.colors.white : theme.colors.dark};
     cursor: pointer;
+    &:hover {
+        background-color: ${({ theme, $primary }) =>
+            $primary ? theme.colors.white : theme.colors.primary};
+        color: ${({ theme, $primary }) =>
+            $primary ? theme.colors.dark : theme.colors.white};
+    }
+
     ${devices.lg} {
         font-size: 16px;
     }

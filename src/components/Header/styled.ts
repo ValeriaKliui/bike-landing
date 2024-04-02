@@ -16,6 +16,13 @@ export const HeaderContainer = styled.header`
         background-position: 400px top;
         background-size: contain;
     }
+    ${devices.md} {
+        background-position: 200px 10%;
+    }
+    ${devices.sm} {
+        background-position: -50px top;
+        background-size: 170%;
+    }
 `;
 export const HeaderWrapper = styled.div`
     display: flex;
@@ -23,6 +30,9 @@ export const HeaderWrapper = styled.div`
     justify-content: space-between;
     width: 100%;
     padding: 2em 0;
+    ${devices.md} {
+        align-items: flex-start;
+    }
 `;
 export const Container = styled.div`
     display: flex;

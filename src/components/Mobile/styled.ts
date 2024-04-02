@@ -57,6 +57,9 @@ export const IconContainer = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    &:hover {
+        transform: scale(1.02);
+    }
 `;
 export const ImgContainer = styled.div`
     position: relative;

@@ -19,11 +19,12 @@ export const Container = styled.div`
 `;
 export const Option = styled.div<{ $isChoosen: boolean }>`
     padding: 1em 2em;
+    border-radius: 65px;
     background-color: ${({ $isChoosen, theme }) =>
         $isChoosen ? theme.colors.mainColor : 'transparent'};
-    border-radius: 65px;
     color: ${({ $isChoosen, theme }) =>
         $isChoosen ? theme.colors.subColor : theme.colors.mainColor};
+
     ${devices.md} {
         padding: 1em 1.5em;
     }

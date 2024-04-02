@@ -5,6 +5,8 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 4em;
+    position: relative;
+    z-index: 100;
     ${devices.md} {
         flex-direction: column;
         gap: 0;

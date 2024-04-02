@@ -7,6 +7,7 @@ import {
     AdvantageImage,
     Title,
     SectionTitle,
+    TitleContainer,
 } from './styled';
 import { FC, Fragment, useState } from 'react';
 import { useWindowSize } from '@uidotdev/usehooks';
@@ -48,12 +49,12 @@ export const Advantages: FC<AdvantageProps> = ({
                                         $index={index}
                                         $isChoosen={isChoosen}
                                     >
-                                        <Title
+                                        <TitleContainer
                                             $isChoosen={isChoosen}
                                             $isLast={isLast}
                                         >
-                                            {advantage}
-                                        </Title>
+                                            <Title>{advantage}</Title>
+                                        </TitleContainer>
                                         <p>{description}</p>
                                     </AdvantageTextContainer>
                                     {isShowing && (

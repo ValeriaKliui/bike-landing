@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { devices } from '../../providers/Theme/constants';
 
-export const Container = styled.div`
+export const Container = styled.div<{ $isOpened: boolean }>`
     display: none;
     ${devices.md} {
-        display: block;
+        display: ${({ $isOpened }) => ($isOpened ? 'block' : 'none')};
         position: fixed;
         top: 0;
-        background-color: ${({ theme }) => theme.colors.white};
+        background-color: ${({ theme }) => theme.colors.subColor};
         height: 100%;
         width: 100%;
         z-index: 1;

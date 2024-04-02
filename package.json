@@ -39,6 +39,7 @@
         "react-transition-group": "^4.4.5",
         "stylelint-config-prettier": "^9.0.5",
         "typescript": "^5.2.2",
+        "usehooks-ts": "^3.0.2",
         "vite": "^5.2.0",
         "vite-plugin-svgr": "^4.2.0"
     }

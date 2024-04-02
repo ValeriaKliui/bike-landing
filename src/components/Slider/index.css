@@ -1,3 +1,4 @@
-.carouselItem {
-    padding-right: 2em;
+.react-multi-carousel-dot-list {
+    gap: 2em;
+    bottom: -3em;
 }

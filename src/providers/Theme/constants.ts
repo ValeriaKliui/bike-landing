@@ -1,6 +1,8 @@
 import { BaseTheme, ScreenSizes } from './interface';
 import LightNoiseSrc from '@assets/images/lightNoise.svg';
 import DarkNoiseSrc from '@assets/images/darkNoise.svg';
+import BlackBikeSrc from '@assets/images/bike.png';
+import WhiteBikeSrc from '@assets/images/bike_white.png';
 
 export const devices = {
     xs: `@media (max-width: ${ScreenSizes.xs}px)`,
@@ -32,7 +34,10 @@ export const darkThemeColors = {
 export const themeLight: BaseTheme = {
     colors,
     devices,
-    noiseSrc: LightNoiseSrc,
+    src: {
+        noise: LightNoiseSrc,
+        previewBike: BlackBikeSrc,
+    },
 };
 
 export const themeDark: BaseTheme = {
@@ -41,5 +46,8 @@ export const themeDark: BaseTheme = {
         ...themeLight.colors,
         ...darkThemeColors,
     },
-    noiseSrc: DarkNoiseSrc,
+    src: {
+        noise: DarkNoiseSrc,
+        previewBike: WhiteBikeSrc,
+    },
 };

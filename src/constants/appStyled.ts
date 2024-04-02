@@ -29,6 +29,12 @@ export const PathWrapper = styled.div`
         ${devices.lg} {
             top: -54%;
         }
+        ${devices.md} {
+            top: -64%;
+        }
+        ${devices.sm} {
+            top: -97%;
+        }
     }
     &::after {
         content: url(${pathImgBottomSrc});

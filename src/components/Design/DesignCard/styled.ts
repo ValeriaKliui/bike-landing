@@ -11,6 +11,9 @@ export const ContainerDesktop = styled.div<{ $src: string }>`
     justify-content: flex-end;
     padding: 4em;
     border-radius: 20px;
+    &:hover {
+        transform: scale(1.02);
+    }
     ${devices.sm} {
         display: none;
     }

@@ -7,10 +7,18 @@ import {
     Name,
     Review,
     RightButton,
+    ArrowsContainer,
+    Container,
+    Dot,
 } from './styled';
 import { ScreenSizes } from '@/providers/Theme/interface';
+import { ButtonGroupProps, DotProps } from 'react-multi-carousel';
+import { FC } from 'react';
+import { useWindowSize } from 'usehooks-ts';
 
 export const Slider = () => {
+    const { width = 0 } = useWindowSize();
+
     const responsive = {
         desktop: {
             breakpoint: { max: 10000, min: ScreenSizes.md },
@@ -29,27 +37,32 @@ export const Slider = () => {
         },
     };
 
-    const CustomLeftArrow = ({ onClick }) => (
-        <LeftButton onClick={onClick}>
-            <ArrowSvg />
-        </LeftButton>
+    const ButtonGroup: FC<ButtonGroupProps> = ({ next, previous }) => (
+        <ArrowsContainer>
+            <LeftButton onClick={previous}>
+                <ArrowSvg />
+            </LeftButton>
+            <RightButton onClick={next}>
+                <ArrowSvg />
+            </RightButton>
+        </ArrowsContainer>
     );
 
-    const CustomRightArrow = ({ onClick }) => (
-        <RightButton onClick={onClick}>
-            <ArrowSvg />
-        </RightButton>
+    const CustomDot: FC<DotProps> = ({ onClick, active }) => (
+        <Dot onClick={onClick} $active={active} />
     );
 
     return (
-        <div style={{ position: 'relative' }}>
+        <Container>
             <CarouselStyled
                 responsive={responsive}
-                customLeftArrow={<CustomLeftArrow />}
-                customRightArrow={<CustomRightArrow />}
-                renderArrowsWhenDisabled
+                arrows={false}
+                customButtonGroup={<ButtonGroup />}
                 sliderClass="sliderList"
                 itemClass="carouselItem"
+                showDots={width <= ScreenSizes.md ? true : false}
+                customDot={<CustomDot />}
+                renderDotsOutside
             >
                 {REVIEWS.map(({ name, review }, index) => (
                     <Review key={index}>
@@ -58,6 +71,6 @@ export const Slider = () => {
                     </Review>
                 ))}
             </CarouselStyled>
-        </div>
+        </Container>
     );
 };

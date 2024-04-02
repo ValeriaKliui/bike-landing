@@ -20,6 +20,9 @@ export const Container = styled.div`
         top: -30%;
         left: -10%;
         z-index: -1;
+        ${devices.md} {
+            display: none;
+        }
     }
     &::after {
         content: url(${PathLine});
@@ -27,6 +30,9 @@ export const Container = styled.div`
         position: absolute;
         top: -210px;
         right: -60px;
+        ${devices.md} {
+            z-index: -1;
+        }
     }
     ${devices.md} {
         flex-direction: column;
@@ -88,6 +94,10 @@ export const BikeImage = styled.img`
                     0
                 )
                 4%);
+    ${devices.lg} {
+        max-height: 600px;
+        top: 20%;
+    }
     ${devices.md} {
         top: -17%;
         right: -30%;

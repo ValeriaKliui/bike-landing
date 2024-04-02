@@ -27,6 +27,18 @@ export const GlobalStyles = styled.createGlobalStyle`
     a {
         text-decoration: none;
         color: inherit;
+        position: relative;
+        &:hover {
+            &::after {
+                content: '';
+                display: block;
+                height: 2px;
+                width: 100%;
+                background-color: ${({ theme }) => theme.colors.primary};
+                position: absolute;
+                bottom: -5px;
+            }
+        }
     }
     h1,
     h2,
@@ -74,7 +86,7 @@ export const GlobalStyles = styled.createGlobalStyle`
                 ${({ theme }) => theme.colors.circlesBackground} 50%,
                 transparent 560%
             ),
-            url(${({ theme }) => theme.noiseSrc});
+            url(${({ theme }) => theme.src.noise});
         background-color: ${({ theme }) => theme.colors.background};
     }
     .wrapper {

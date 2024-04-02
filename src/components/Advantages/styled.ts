@@ -9,6 +9,8 @@ export const AdvantagesGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 2em;
+    position: relative;
+    z-index: 2;
     div {
         cursor: pointer;
     }
@@ -34,7 +36,6 @@ export const AdvantageTextContainer = styled.div<{
     color: ${({ theme, $isChoosen }) =>
         $isChoosen ? 'inherit' : theme.colors.disabled};
     &:hover {
-        transform: scale(1.01);
         h4 {
             color: ${({ theme }) => theme.colors.primary};
         }
@@ -42,32 +43,39 @@ export const AdvantageTextContainer = styled.div<{
     ${devices.md} {
         grid-column-start: unset;
         color: inherit;
-        &:hover {
-            transform: unset;
-        }
     }
 `;
-export const Title = styled.h4<{
+export const TitleContainer = styled.div<{
     $isLast: boolean;
     $isChoosen: boolean;
 }>`
+    min-height: 5em;
+    position: relative;
     color: ${({ theme, $isChoosen }) =>
         $isChoosen ? theme.colors.primary : theme.colors.disabled};
-    ${devices.md} {
-        color: ${({ theme }) => theme.colors.primary};
-    }
     &::after {
         content: '';
         display: block;
-        width: ${({ $isLast }) => ($isLast ? '100%' : '130%')};
         height: 3px;
-        margin-top: 1em;
+        width: ${({ $isLast }) => ($isLast ? '100%' : '130%')};
         background-color: ${({ theme, $isChoosen }) =>
             $isChoosen ? theme.colors.primary : theme.colors.disabled};
+        position: absolute;
+        bottom: 0;
         ${devices.md} {
             width: 150px;
             background-color: ${({ theme }) => theme.colors.primary};
         }
+    }
+    ${devices.md} {
+        min-height: 3em;
+    }
+`;
+export const Title = styled.h4<{
+    $isChoosen: boolean;
+}>`
+    ${devices.md} {
+        color: ${({ theme }) => theme.colors.primary};
     }
 `;
 export const AdvantageImage = styled.img<{
