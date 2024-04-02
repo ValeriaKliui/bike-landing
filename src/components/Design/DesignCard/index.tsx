@@ -1,6 +1,8 @@
+import { FC } from 'react';
 import { ContainerDesktop, ContainerMobile, Image } from './styled';
+import { DesignCardProps } from './interfaces';
 
-export const DesignCard = ({ imageSrc, title, text }) => (
+export const DesignCard: FC<DesignCardProps> = ({ imageSrc, title, text }) => (
     <>
         <ContainerDesktop $src={imageSrc}>
             <h4>{title}</h4>

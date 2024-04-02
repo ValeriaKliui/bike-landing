@@ -19,6 +19,8 @@ import MobileImgSrc from '@assets/images/mobile_mb.png';
 
 export const Mobile = () => {
     const { width } = useWindowSize();
+    const imgSrc = width && width < ScreenSizes.md ? MobileImgSrc : MobileImg;
+
     return (
         <SectionContainer>
             <Container className="wrapper">
@@ -42,9 +44,7 @@ export const Mobile = () => {
                     </Icons>
                 </TextContainer>
                 <ImgContainer>
-                    <Img
-                        src={width < ScreenSizes.md ? MobileImgSrc : MobileImg}
-                    />
+                    <Img src={imgSrc} />
                 </ImgContainer>
             </Container>
         </SectionContainer>
